@@ -1,0 +1,58 @@
+# Логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Директории для запуска
+dist/
+build/
+out/
+.nyc_output/
+
+# Зависимости
+node_modules/
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+
+# Кэш
+.cache/
+.parcel-cache/
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Временные файлы
+.tmp/
+.temp/
+
+# Файлы окружения
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Опционально - если используете yarn
+.yarn/
+.yarnrc.yml
+.pnp.*

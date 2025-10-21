@@ -186,3 +186,61 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #db2777, #9333ea);
 }
+
+.dark .card {
+  background: rgba(30, 30, 45, 0.9);
+  border-color: #6b21a8;
+  color: #e9d5ff;
+}
+
+.dark .card:hover {
+  border-color: #9333ea;
+}
+
+.dark .input-cute {
+  background: rgba(30, 30, 45, 0.8);
+  border-color: #6b21a8;
+  color: #e9d5ff;
+}
+
+.dark .input-cute:focus {
+  border-color: #a855f7;
+}
+
+.dark body {
+  background: linear-gradient(to bottom right, #1e1b2e, #2d1b69, #1e1b2e);
+  color: #e9d5ff;
+}
+
+.dark .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #1e1b2e, #2d1b69, #1e1b2e);
+}
+
+.dark .bg-white-800 {
+  background: rgba(30, 30, 45, 0.8);
+}
+
+.dark .text-purple-700 {
+  color: #d8b4fe;
+}
+
+.dark .text-pink-600 {
+  color: #f0abfc;
+}
+
+/* Стили для списка пользователей в темной теме */
+.dark .bg-gradient-to-r.from-pink-50.to-purple-50 {
+  background: linear-gradient(to right, #1e1b2e, #2d1b69);
+}
+
+.dark .border-pink-200 {
+  border-color: #6b21a8;
+}
+
+.dark .text-pink-700 {
+  color: #f0abfc;
+}
+
+.dark .text-purple-600 {
+  color: #c084fc;
+}

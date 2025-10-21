@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { User, Project, mockUsers, mockProjects } from './mockData';
 
 interface AppState {
@@ -30,6 +30,14 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     setUsers(prev => [...prev, newUser]);
   };
 
+  useEffect(() => {
+    if (colorMode === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [colorMode]);
+  
   const addProject = (projectData: Omit<Project, 'id'>) => {
     const newProject: Project = {
       ...projectData,

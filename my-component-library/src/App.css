@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+}
+
+.demo-section {
+  margin: 40px 0;
+  padding: 20px;
+  border: 1px solid #61dafb;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.demo-section h2 {
+  color: #61dafb;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.event-log {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.event-log p {
+  margin: 5px 0;
+  padding: 5px;
+  border-left: 3px solid #61dafb;
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button-group button {
+    width: 100%;
+  }
+}

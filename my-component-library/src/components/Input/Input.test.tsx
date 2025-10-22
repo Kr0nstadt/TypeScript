@@ -17,12 +17,8 @@ describe('Input Component', () => {
   test('renders input with label', () => {
     render(<Input label="Username" value="" onChange={() => {}} />);
     
-    // Теперь ищем по роли textbox, так как label связан с input через htmlFor
-    const input = screen.getByRole('textbox');
+    const input = screen.getByLabelText('Username');
     expect(input).toBeInTheDocument();
-    
-    // Проверяем что label отображается
-    expect(screen.getByText('Username')).toBeInTheDocument();
   });
 
   test('calls onChange when value changes', () => {
@@ -53,9 +49,26 @@ describe('Input Component', () => {
     expect(screen.getByText('*')).toBeInTheDocument();
   });
 
-  test('has correct type attribute', () => {
+  test('has correct type attribute for password', () => {
     render(<Input value="" onChange={() => {}} type="password" />);
     
-    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'password');
+    // Для password inputs используем getByDisplayValue или query по атрибуту
+    const input = screen.getByDisplayValue('');
+    expect(input).toHaveAttribute('type', 'password');
+  });
+
+  test('has correct type attribute for text', () => {
+    render(<Input value="" onChange={() => {}} type="text" />);
+    
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('type', 'text');
+  });
+
+  test('renders without label', () => {
+    render(<Input value="" onChange={() => {}} />);
+    
+    // Для input без label ищем по роли textbox
+    const input = screen.getByRole('textbox');
+    expect(input).toBeInTheDocument();
   });
 });

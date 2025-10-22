@@ -22,7 +22,8 @@ const Input: React.FC<InputProps> = ({
     onChange,
     type = 'text'
 }) => {
-    const inputId = `input-${Math.random().toString(36).substr(2, 9)}`;
+    // Генерируем уникальный id для связи label и input
+    const inputId = React.useId();
     const inputClass = `${styles.input} ${error ? styles.error : ''}`;
 
     return (

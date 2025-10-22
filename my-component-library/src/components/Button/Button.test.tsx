@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Button from './Button';
 
-// Mock CSS modules
+// Mock для CSS модуля
 jest.mock('./Button.module.css', () => ({
   button: 'button',
   primary: 'primary',
@@ -44,5 +44,35 @@ describe('Button Component', () => {
     );
     
     expect(screen.getByText('Click me')).toBeDisabled();
+  });
+
+  test('has correct type attribute', () => {
+    render(
+      <Button variant="primary" size="md" onClick={() => {}} type="submit">
+        Submit
+      </Button>
+    );
+    
+    expect(screen.getByText('Submit')).toHaveAttribute('type', 'submit');
+  });
+
+  test('applies correct variant class', () => {
+    const { container } = render(
+      <Button variant="danger" size="md" onClick={() => {}}>
+        Danger Button
+      </Button>
+    );
+    
+    expect(container.firstChild).toHaveClass('danger');
+  });
+
+  test('applies correct size class', () => {
+    const { container } = render(
+      <Button variant="primary" size="lg" onClick={() => {}}>
+        Large Button
+      </Button>
+    );
+    
+    expect(container.firstChild).toHaveClass('lg');
   });
 });
